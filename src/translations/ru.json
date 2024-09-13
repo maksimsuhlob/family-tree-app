@@ -1,0 +1,44 @@
+{
+  "button": {
+    "save": "Сохранить",
+    "delete": "Удалить"
+  },
+  "nameType": {
+    "aka": "также известен как, псевдоним и т.д.",
+    "birth": "имя, указанное в свидетельстве о рождении",
+    "immigrant": "имя, принятое при иммиграции",
+    "maiden": "девичья фамилия, имя до первого брака",
+    "married": "имя было предыдущей фамилией человека в браке",
+    "user_defined": "другое текстовое имя"
+  },
+  "gender": {
+    "male": "Мужчина",
+    "female": "Женщина",
+    "unknown": "Не установлен"
+  },
+  "menu": {
+    "home": "Домой",
+    "persons": "Люди",
+    "tree": "Древо"
+  },
+  "personsPage": {
+    "addNewPerson": "Добавить человека"
+  },
+  "personPage": {
+    "sexLabel": "Пол",
+    "nameTypeLabel": "Тип имени",
+    "prefixNameLabel": "Префикс имени",
+    "givenNameLabel": "Имя",
+    "nicknameNameLabel": "Псевдоним",
+    "surnamePrefixNameLabel": "Префикс фамилии",
+    "surnameNameLabel": "Фамилия",
+    "suffixNameLabel": "Суффикс имени",
+    "prefixNameRomanisedLabel": "Префикс имени латиницей",
+    "givenNameRomanisedLabel": "Имя латиницей",
+    "nicknameNameRomanisedLabel": "Псевдоним латиницей",
+    "surnamePrefixNameRomanisedLabel": "Префикс фамилии латиницей",
+    "surnameNameRomanisedLabel": "Фамилия латиницей",
+    "suffixNameRomanisedLabel": "Суффикс имени латиницей",
+    "addName": "Добавить имя"
+  }
+}
