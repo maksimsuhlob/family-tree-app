@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import {RouterProvider,
-} from "react-router-dom";
+import {RouterProvider,} from "react-router-dom";
 import router from "./router/router";
 import i18n from "./utils/translations";
 import {I18nextProvider} from "react-i18next";
@@ -13,18 +12,25 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {theme} from "./theme/theme";
+import {NotificationProvider} from "./utils/notifications";
+import {AuthProvider} from "./utils/auth";
 
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
+
 root.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <I18nextProvider i18n={i18n} defaultNS={'translation'}>
-        <RouterProvider router={router} />
-        </I18nextProvider>
+            <CssBaseline/>
+            <I18nextProvider i18n={i18n} defaultNS={'translation'}>
+                <NotificationProvider>
+                    <AuthProvider>
+                        <RouterProvider router={router}/>
+                    </AuthProvider>
+                </NotificationProvider>
+            </I18nextProvider>
         </ThemeProvider>
     </React.StrictMode>
 );

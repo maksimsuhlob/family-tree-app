@@ -4,6 +4,7 @@ import {Header} from "../components/Header";
 import {Box} from "@mui/material";
 
 function HomePage() {
+
     return (
         <>
             <Header/>

@@ -1,20 +1,23 @@
-import {TextField} from "@mui/material";
+import {TextField, TextFieldProps} from "@mui/material";
 import {Controller, useFormContext} from "react-hook-form";
 import React from "react";
 
-interface IControlledTextFieldProps {
+interface IControlledTextFieldProps extends TextFieldProps<'standard'> {
     name: string,
-    label: string,
 }
 
-export default function ControlledTextField({name, label}: IControlledTextFieldProps) {
+export default function ControlledTextField({name, ...props}: IControlledTextFieldProps) {
     const {control} = useFormContext()
     return (
         <Controller
             control={control}
             name={name}
             render={({field})=>{
-                return <TextField {...field} label={label} fullWidth/>
+                return <TextField
+                    fullWidth
+                    {...props}
+                    {...field}
+                />
             }}/>
     )
 }
