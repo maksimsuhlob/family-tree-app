@@ -12,8 +12,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {theme} from "./theme/theme";
-import {NotificationProvider} from "./utils/notifications";
-import {AuthProvider} from "./utils/auth";
+import {NotificationProvider} from "./providers/notifications";
+import {AuthProvider} from "./providers/auth";
 
 
 const root = ReactDOM.createRoot(

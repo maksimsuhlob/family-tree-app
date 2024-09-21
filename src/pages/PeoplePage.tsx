@@ -4,7 +4,7 @@ import {Box, Button} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {getPersonUrl} from "../router/router";
 
-function PersonsPage() {
+function PeoplePage() {
     const {t} = useTranslation();
     const navigate = useNavigate();
     const handleAddNewPerson=()=>{
@@ -22,4 +22,4 @@ function PersonsPage() {
     );
 }
 
-export default PersonsPage;
+export default PeoplePage;

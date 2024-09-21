@@ -1,5 +1,5 @@
 import {Alert, Box, styled} from "@mui/material";
-import {useNotifications} from "../utils/notifications";
+import {useNotifications} from "../providers/notifications";
 
 const AlertContainer = styled(Box)(({theme}) => ({
     position: 'fixed',

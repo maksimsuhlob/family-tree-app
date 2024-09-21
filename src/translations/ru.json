@@ -1,10 +1,13 @@
 {
   "button": {
+    "cancel": "Отменить",
     "save": "Сохранить",
     "delete": "Удалить",
     "login": "Авторизация",
     "logIn": "Войти",
-    "signIn": "Создать профиль"
+    "signIn": "Создать профиль",
+    "newTree": "Добавить семейное древо",
+    "addIndividual": "Добавить человека"
   },
   "nameType": {
     "aka": "также известен как, псевдоним и т.д.",
@@ -23,6 +26,16 @@
     "home": "Домой",
     "persons": "Люди",
     "tree": "Древо"
+  },
+  "treesPage": {
+    "trees": "Деревья",
+    "myTrees": "Мои деревья",
+    "canEditTrees": "Доступные для редактирования деревья",
+    "newTreeForm": "Добавить новое древо",
+    "nameField": "Название древа",
+    "people": "Люди",
+    "families": "Семьи",
+    "settings": "Детали"
   },
   "personsPage": {
     "addNewPerson": "Добавить человека"
@@ -142,7 +155,7 @@
     "auth/user-disabled": "auth/user-disabled",
     "auth/user-mismatch": "auth/user-mismatch",
     "auth/user-signed-out": "auth/user-signed-out",
-    "auth/weak-password": "auth/weak-password",
+    "auth/weak-password": "Слабый пароль",
     "auth/web-storage-unsupported": "auth/web-storage-unsupported",
     "auth/already-initialized": "auth/already-initialized",
     "auth/recaptcha-not-enabled": "auth/recaptcha-not-enabled",
@@ -152,6 +165,15 @@
     "auth/missing-client-type": "auth/missing-client-type",
     "auth/missing-recaptcha-version": "auth/missing-recaptcha-version",
     "auth/invalid-recaptcha-version": "auth/invalid-recaptcha-version",
-    "auth/invalid-req-type": "auth/invalid-req-type"
+    "auth/invalid-req-type": "auth/invalid-req-type",
+    "getData": "Данные не доступны"
+  },
+  "success": {
+    "addNewRecord": "Новая запись успешно создана",
+    "recordUpdated": "Запись успешно обновлена",
+    "recordDeleted": "Ззапись успешно удалена"
+  },
+  "warning": {
+    "notAuthorised": "Авторизуйтесь"
   }
 }

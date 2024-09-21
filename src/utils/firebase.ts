@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
+import {QueryDocumentSnapshot} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,6 +14,18 @@ const firebaseConfig = {
     messagingSenderId: "36137864008",
     appId: "1:36137864008:web:9210fc04b56a3560f4817d"
 };
+export const converter = <T>() => ({
+    toFirestore: (data: T) => (data),
+    fromFirestore: (snap: QueryDocumentSnapshot) => {
+        return (snap.data() as T)
+    }
+})
+
+export const collections = {
+    people: 'people',
+    trees: 'trees',
+    users: 'users',
+}
 
 // Initialize Firebase
 export const firebaseApp = initializeApp(firebaseConfig);

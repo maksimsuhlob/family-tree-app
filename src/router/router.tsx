@@ -1,18 +1,16 @@
 import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import ErrorPage from "../pages/ErrorPage";
-import PersonPage from "../pages/PersonPage";
-import TreePage from "../pages/TreePage";
-import PersonsPage from "../pages/PersonsPage";
+import TreesPage from "../pages/TreesPage";
 
 export const routes={
     home: '/',
-    persons: "persons",
-    person: "person/:personId",
-    tree: "tree",
+    trees: "tree",
+    tree: "tree/:treeId",
 }
 
-export const getPersonUrl=(id:string)=>(`/person/${id}`)
+export const getTreeUrl = (id: string) => (`/tree/${id}`)
+export const getPersonUrl = (id: string) => (`person/${id}`)
 
 const router = createBrowserRouter([
     {
@@ -21,16 +19,12 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>,
         children:[
             {
-                path: routes.persons,
-                element: <PersonsPage/>,
-            },
-            {
-                path: routes.person,
-                element: <PersonPage/>,
+                path: routes.trees,
+                element: <TreesPage/>
             },
             {
                 path: routes.tree,
-                element: <TreePage/>
+                element: <TreesPage/>
             },
         ]
     },

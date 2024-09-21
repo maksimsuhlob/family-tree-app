@@ -6,11 +6,12 @@ import {
     signOut,
     User
 } from "firebase/auth";
-import {firebaseApp} from "./firebase";
+import {firebaseApp} from "../utils/firebase";
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {useNotifications} from "./notifications";
 import {useTranslation} from "react-i18next";
 import {NotificationEnum} from "../enums/notificationEnum";
+import {useUser} from "../hooks/useUser";
 
 const auth = getAuth(firebaseApp);
 
@@ -25,12 +26,9 @@ interface IAuthContext {
 }
 
 const AuthContext = createContext<IAuthContext>({
-    loginUser: () => {
-    },
-    createUser: () => {
-    },
-    logoutUser: () => {
-    },
+    loginUser: () => null,
+    createUser: () => null,
+    logoutUser: () => null,
     user: null,
     isAuthenticated: false,
 })
@@ -40,8 +38,13 @@ export const AuthProvider = ({children}: { children: React.ReactElement }) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
     const {addNotification} = useNotifications()
     const {t} = useTranslation()
+    const {addNewUser} = useUser()
+
     const createUser = ({email, password}: { email: string, password: string }) => {
         createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredantial) => {
+                addNewUser({uid: userCredantial.user.uid, email: userCredantial.user?.email})
+            })
             .catch((error) => {
                 const errorCode = error.code;
                 addNotification({message: t(`error.${errorCode}`), type: NotificationEnum.error})
@@ -61,6 +64,7 @@ export const AuthProvider = ({children}: { children: React.ReactElement }) => {
                 addNotification({message: t(`error.${errorCode}`), type: NotificationEnum.error})
             });
     }
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -72,6 +76,7 @@ export const AuthProvider = ({children}: { children: React.ReactElement }) => {
             }
         });
     }, [])
+
     return <AuthContext.Provider value={{
         loginUser,
         createUser,

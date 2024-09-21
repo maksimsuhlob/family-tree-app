@@ -70,8 +70,7 @@ export default function Menu() {
             <Divider/>
             <Box padding={1}>
                 <NavLinkStyled to={routes.home} onClick={handleClickItem}>{t('menu.home')}</NavLinkStyled>
-                <NavLinkStyled to={routes.persons} onClick={handleClickItem}>{t('menu.persons')}</NavLinkStyled>
-                <NavLinkStyled to={routes.tree} onClick={handleClickItem}>{t('menu.tree')}</NavLinkStyled>
+                <NavLinkStyled to={routes.trees} onClick={handleClickItem}>{t('menu.tree')}</NavLinkStyled>
             </Box>
         </DrawerStyled>
     </>)

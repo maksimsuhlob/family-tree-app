@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import {Button, Dialog, Grid2, Paper, styled} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {FormProvider, useForm} from "react-hook-form";
-import ControlledTextField from "./form/ControlledTextField";
-import {useAuth} from "../utils/auth";
+import ControlledTextField from "./form-components/ControlledTextField";
+import {useAuth} from "../providers/auth";
 
 const FormContainer = styled(Paper)(({theme}) => ({
     padding: theme.spacing(2, 2),

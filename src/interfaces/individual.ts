@@ -3,8 +3,8 @@ import {GenderEnum} from "../enums/genderEnum";
 import {INoteRecord} from "./note";
 
 //gedcom p.61
-export interface IIndividualRecord {
-    id: string;
+export interface IIndividual {
+    // id: string;
     names: Array<IPersonalNameStructure>;
     sex: GenderEnum
     events?: Array<any>//p69
@@ -17,4 +17,8 @@ export interface IIndividualRecord {
     notes?: Array<INoteRecord>//p71
     citation?: Array<any>//p73
     multimediaLinks?: Array<string>//p71
+}
+
+export interface IIndividualRecord extends IIndividual {
+    id: string
 }
